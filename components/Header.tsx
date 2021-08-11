@@ -5,8 +5,32 @@ import {
   SearchIcon,
   UserCircleIcon,
 } from '@heroicons/react/solid'
+import { useState } from 'react'
+import {
+  DateRangePicker,
+  DateRangeProps,
+  OnDateRangeChangeProps,
+} from 'react-date-range'
+import 'react-date-range/dist/styles.css' // main style file
+import 'react-date-range/dist/theme/default.css' // theme css file
 
 const Header = () => {
+  const [searchInput, setSearchInput] = useState('')
+  const [startDate, setStartDate] = useState(new Date())
+  const [endDate, setEndDate] = useState(new Date())
+
+  const handleSelect = (ranges: OnDateRangeChangeProps) => {
+    console.log(ranges)
+
+    setStartDate(ranges.Selection.startDate)
+    setEndDate(ranges.Selection.endDate)
+  }
+
+  const selectionRange: DateRangeProps = {
+    startDate,
+    endDate,
+    key: 'Selection',
+  }
   return (
     <header className="sticky top-0 z-50 grid grid-cols-3 p-5 bg-white shadow-md md:px-10">
       {/* Left */}
@@ -24,6 +48,8 @@ const Header = () => {
           className="flex-grow pl-5 text-sm text-gray-600 placeholder-gray-400 bg-transparent outline-none"
           type="text"
           placeholder="Start your search"
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
         />
         <SearchIcon className="hidden h-8 p-2 text-white bg-red-400 rounded-full cursor-pointer md:mx-2 md:inline-flex" />
       </div>
@@ -36,6 +62,16 @@ const Header = () => {
           <UserCircleIcon className="h-6" />
         </div>
       </div>
+      {searchInput !== '' && (
+        <div>
+          <DateRangePicker
+            ranges={[selectionRange]}
+            minDate={new Date()}
+            rangeColors={['#FD5B61']}
+            onChange={(ranges) => handleSelect(ranges)}
+          />
+        </div>
+      )}
     </header>
   )
 }
