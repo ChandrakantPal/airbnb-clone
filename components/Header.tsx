@@ -20,8 +20,6 @@ const Header = () => {
   const [endDate, setEndDate] = useState(new Date())
 
   const handleSelect = (ranges: OnDateRangeChangeProps) => {
-    console.log(ranges)
-
     setStartDate(ranges.selection.startDate)
     setEndDate(ranges.selection.endDate)
   }
