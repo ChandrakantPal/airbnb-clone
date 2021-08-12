@@ -22,14 +22,14 @@ const Header = () => {
   const handleSelect = (ranges: OnDateRangeChangeProps) => {
     console.log(ranges)
 
-    setStartDate(ranges.Selection.startDate)
-    setEndDate(ranges.Selection.endDate)
+    setStartDate(ranges.selection.startDate)
+    setEndDate(ranges.selection.endDate)
   }
 
   const selectionRange: DateRangeProps = {
     startDate,
     endDate,
-    key: 'Selection',
+    key: 'selection',
   }
   return (
     <header className="sticky top-0 z-50 grid grid-cols-3 p-5 bg-white shadow-md md:px-10">
