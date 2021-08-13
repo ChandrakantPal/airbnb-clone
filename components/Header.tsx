@@ -74,6 +74,10 @@ const Header = () => {
               Number of Guests
             </h2>
             <UsersIcon className="h-5" />
+            <input
+              type="number"
+              className="w-12 pl-2 text-lg text-red-400 outline-none"
+            />
           </div>
         </div>
       )}
