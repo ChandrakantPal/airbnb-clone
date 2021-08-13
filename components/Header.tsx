@@ -19,6 +19,7 @@ const Header = () => {
   const [searchInput, setSearchInput] = useState('')
   const [startDate, setStartDate] = useState(new Date())
   const [endDate, setEndDate] = useState(new Date())
+  const [noOfGuests, setNoOfGuests] = useState(1)
 
   const handleSelect = (ranges: OnDateRangeChangeProps) => {
     setStartDate(ranges.selection.startDate)
@@ -77,6 +78,9 @@ const Header = () => {
             <input
               type="number"
               className="w-12 pl-2 text-lg text-red-400 outline-none"
+              value={noOfGuests}
+              min={1}
+              onChange={(e) => setNoOfGuests(parseInt(e.target.value))}
             />
           </div>
         </div>
