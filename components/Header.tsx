@@ -4,6 +4,7 @@ import {
   MenuIcon,
   SearchIcon,
   UserCircleIcon,
+  UsersIcon,
 } from '@heroicons/react/solid'
 import { useState } from 'react'
 import {
@@ -68,10 +69,11 @@ const Header = () => {
             rangeColors={['#FD5B61']}
             onChange={(ranges) => handleSelect(ranges)}
           />
-          <div>
+          <div className="flex items-center mb-4 border-b">
             <h2 className="flex-grow text-2xl font-semibold">
               Number of Guests
             </h2>
+            <UsersIcon className="h-5" />
           </div>
         </div>
       )}
