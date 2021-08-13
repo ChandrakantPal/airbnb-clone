@@ -68,6 +68,11 @@ const Header = () => {
             rangeColors={['#FD5B61']}
             onChange={(ranges) => handleSelect(ranges)}
           />
+          <div>
+            <h2 className="flex-grow text-2xl font-semibold">
+              Number of Guests
+            </h2>
+          </div>
         </div>
       )}
     </header>
