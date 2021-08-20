@@ -12,7 +12,7 @@ const Search = () => {
   const range = `${formattedStartDate} - ${formattedEndDate}`
   return (
     <div>
-      <Header />
+      <Header placeholder={`${location} | ${range} | ${noOfGuests}`} />
       <main className="flex">
         <section className="flex-grow px-6 pt-14">
           <p className="text-xs">
