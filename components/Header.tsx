@@ -72,7 +72,7 @@ const Header: FC<HeaderProps> = ({ placeholder }) => {
         <input
           className="flex-grow pl-5 text-sm text-gray-600 placeholder-gray-400 bg-transparent outline-none"
           type="text"
-          placeholder="Start your search"
+          placeholder={placeholder ? placeholder : 'Start your search'}
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
