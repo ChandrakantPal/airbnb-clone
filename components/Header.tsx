@@ -6,7 +6,7 @@ import {
   UserCircleIcon,
   UsersIcon,
 } from '@heroicons/react/solid'
-import { useState } from 'react'
+import { FC, useState } from 'react'
 import {
   DateRangePicker,
   DateRangeProps,
@@ -16,7 +16,11 @@ import 'react-date-range/dist/styles.css' // main style file
 import 'react-date-range/dist/theme/default.css' // theme css file
 import { useRouter } from 'next/dist/client/router'
 
-const Header = ({ placeholder }) => {
+interface HeaderProps {
+  placeholder?: string
+}
+
+const Header: FC<HeaderProps> = ({ placeholder }) => {
   const [searchInput, setSearchInput] = useState('')
   const [startDate, setStartDate] = useState(new Date())
   const [endDate, setEndDate] = useState(new Date())
