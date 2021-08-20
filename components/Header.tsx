@@ -14,12 +14,14 @@ import {
 } from 'react-date-range'
 import 'react-date-range/dist/styles.css' // main style file
 import 'react-date-range/dist/theme/default.css' // theme css file
+import { useRouter } from 'next/dist/client/router'
 
 const Header = () => {
   const [searchInput, setSearchInput] = useState('')
   const [startDate, setStartDate] = useState(new Date())
   const [endDate, setEndDate] = useState(new Date())
   const [noOfGuests, setNoOfGuests] = useState(1)
+  const router = useRouter()
 
   const resetInput = () => {
     setSearchInput('')
@@ -38,7 +40,10 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 grid grid-cols-3 p-5 bg-white shadow-md md:px-10">
       {/* Left */}
-      <div className="relative flex items-center h-10 my-auto cursor-pointer">
+      <div
+        onClick={() => router.push('/')}
+        className="relative flex items-center h-10 my-auto cursor-pointer"
+      >
         <Image
           src="https://links.papareact.com/qd3"
           layout="fill"
