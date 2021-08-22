@@ -3,7 +3,7 @@ import { useRouter } from 'next/dist/client/router'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 
-const Search = () => {
+const Search = ({ searchResults }) => {
   const router = useRouter()
   const { location, startDate, endDate, noOfGuests } = router.query
 
@@ -36,3 +36,14 @@ const Search = () => {
 }
 
 export default Search
+
+export const getServerSideProps = async () => {
+  const searchResults = await fetch('https://links.papareact.com/isz').then(
+    (res) => res.json()
+  )
+  return {
+    props: {
+      searchResults,
+    },
+  }
+}
