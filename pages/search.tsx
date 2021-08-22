@@ -2,6 +2,7 @@ import { format } from 'date-fns'
 import { useRouter } from 'next/dist/client/router'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
+import InfoCard from '../components/InfoCard'
 
 const Search = ({ searchResults }) => {
   const router = useRouter()
@@ -28,6 +29,19 @@ const Search = ({ searchResults }) => {
             <p className="button">Rooms and Beds</p>
             <p className="button">More filters</p>
           </div>
+          {searchResults.map(
+            ({ img, location, title, description, star, price, total }) => (
+              <InfoCard
+                img={img}
+                location={location}
+                title={title}
+                description={description}
+                star={star}
+                price={price}
+                total={total}
+              />
+            )
+          )}
         </section>
       </main>
       <Footer />
