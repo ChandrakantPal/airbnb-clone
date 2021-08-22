@@ -29,19 +29,22 @@ const Search = ({ searchResults }) => {
             <p className="button">Rooms and Beds</p>
             <p className="button">More filters</p>
           </div>
-          {searchResults.map(
-            ({ img, location, title, description, star, price, total }) => (
-              <InfoCard
-                img={img}
-                location={location}
-                title={title}
-                description={description}
-                star={star}
-                price={price}
-                total={total}
-              />
-            )
-          )}
+          <div className="flex flex-col">
+            {searchResults.map(
+              ({ img, location, title, description, star, price, total }) => (
+                <InfoCard
+                  key={img}
+                  img={img}
+                  location={location}
+                  title={title}
+                  description={description}
+                  star={star}
+                  price={price}
+                  total={total}
+                />
+              )
+            )}
+          </div>
         </section>
       </main>
       <Footer />
