@@ -12,9 +12,14 @@ const InfoCard = ({
   total,
 }) => {
   return (
-    <div className="flex">
+    <div className="flex px-2 pr-4 transition duration-200 ease-out border-b cursor-pointer py-7 hover:opacity-80 hover:shadow-lg first:border-t">
       <div className="relative flex-shrink-0 w-40 h-24 md:h-52 md:w-80">
-        <Image src={img} layout="fill" objectFit="cover" />
+        <Image
+          src={img}
+          layout="fill"
+          objectFit="cover"
+          className="rounded-2xl"
+        />
       </div>
       <div className="flex flex-col flex-grow pl-5">
         <div className="flex justify-between">
