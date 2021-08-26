@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import ReactMapGL from 'react-map-gl'
+import geoCenter from 'geolib/es/getCenter'
 
-const Map = () => {
+const Map = ({ searchResults }) => {
   const [viewport, setViewport] = useState({
     width: '100%',
     height: '100%',
