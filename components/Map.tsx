@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import ReactMapGL from 'react-map-gl'
+import ReactMapGL, { Marker, Popup } from 'react-map-gl'
 import getCenter from 'geolib/es/getCenter'
 
 const Map = ({ searchResults }) => {
+  const [selectedLocation, setSelectedLocation] = useState({})
   // transforming the search results
   const coordinates = searchResults.map((result) => ({
     longitude: result.long,
@@ -24,7 +25,20 @@ const Map = ({ searchResults }) => {
       mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAPBOX_KEY}
       {...viewport}
       onViewportChange={(nextViewport) => setViewport(nextViewport)}
-    ></ReactMapGL>
+    >
+      {searchResults.map((result) => (
+        <div key={result.long}>
+          <Marker
+            longitude={result.long}
+            latitude={result.lat}
+            offsetLeft={-20}
+            offsetTop={-10}
+          >
+            <p className="text-2xl cursor-pointer animate-bounce">📌</p>
+          </Marker>
+        </div>
+      ))}
+    </ReactMapGL>
   )
 }
 
