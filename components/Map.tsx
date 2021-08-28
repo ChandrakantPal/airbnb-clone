@@ -34,7 +34,12 @@ const Map = ({ searchResults }) => {
             offsetLeft={-20}
             offsetTop={-10}
           >
-            <p className="text-2xl cursor-pointer animate-bounce">📌</p>
+            <p
+              onClick={() => setSelectedLocation(result)}
+              className="text-2xl cursor-pointer animate-bounce"
+            >
+              📌
+            </p>
           </Marker>
         </div>
       ))}
