@@ -18,6 +18,7 @@
     "tailwind-scrollbar-hide": "^1.0.3"
   },
   "devDependencies": {
+    "@types/node": "^17.0.33",
     "@types/react": "^18.0.9",
     "@types/react-date-range": "^1.1.7",
     "autoprefixer": "^10.2.6",
