@@ -20,7 +20,7 @@
   "devDependencies": {
     "@types/node": "^17.0.33",
     "@types/react": "^18.0.9",
-    "@types/react-date-range": "^1.1.7",
+    "@types/react-date-range": "^1.4.3",
     "autoprefixer": "^10.2.6",
     "postcss": "^8.3.5",
     "tailwindcss": "^2.2.4",
