@@ -10,8 +10,9 @@ import { FC, useState } from 'react'
 import {
   DateRangePicker,
   DateRangeProps,
-  OnDateRangeChangeProps,
+  DateRangePickerProps,
 } from 'react-date-range'
+
 import 'react-date-range/dist/styles.css' // main style file
 import 'react-date-range/dist/theme/default.css' // theme css file
 import { useRouter } from 'next/dist/client/router'
@@ -31,7 +32,7 @@ const Header: FC<HeaderProps> = ({ placeholder }) => {
     setSearchInput('')
   }
 
-  const handleSelect = (ranges: OnDateRangeChangeProps) => {
+  const handleSelect = (ranges: DateRangePickerProps) => {
     setStartDate(ranges.selection.startDate)
     setEndDate(ranges.selection.endDate)
   }
