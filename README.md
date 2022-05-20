@@ -1,5 +1,7 @@
 # [Airbnb Clone](https://airbnb-clone-next-tailwind.vercel.app/)
 
+This Project is Airbnb clone build using Next.js, Tailwindcss, TypeScript.
+
 ## How to use
 
 Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
