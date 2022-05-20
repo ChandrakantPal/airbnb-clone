@@ -7,3 +7,13 @@ This Project is Airbnb clone build using Next.js, Tailwindcss, TypeScript.
 Next.js
 TypeScript
 tailwindcss
+
+## Get Started
+
+```bash
+npm install
+npm run dev
+# or
+yarn
+yarn dev
+```
